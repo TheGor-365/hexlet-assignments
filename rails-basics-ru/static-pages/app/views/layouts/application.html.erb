@@ -8,6 +8,14 @@
   </head>
 
   <body>
-    <%= yield %>
+    <ul>
+      <li>
+        <%= link_to 'Home', root_path %>
+      </li>
+    </ul>
+
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>

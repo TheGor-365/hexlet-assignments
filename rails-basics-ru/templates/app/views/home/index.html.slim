@@ -1,0 +1,12 @@
+h1 class='display-1 text-muted' Wellcome
+
+h3 class='display-5 text-success' to Gor's slim task manager
+
+div class="row my-5"
+  div class="col-3"
+    h3
+      = link_to 'Show Tasks', tasks_path, class: "py-3 px-5 text-primary text-center border border-primary rounded my-5"
+  div class="col-3"
+    h3
+      = link_to 'Create Task', new_task_path, class: "py-3 px-5 text-success text-center border border-success rounded my-5"
+  div class="col-6"

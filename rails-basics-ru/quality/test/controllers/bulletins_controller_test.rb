@@ -9,9 +9,9 @@ class BulletinsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get show' do
-    @bulletine = bulletins(:one)
+    @bulletin = bulletins(:one)
 
-    get bulletine_url(@bulletine)
+    get bulletin_url(@bulletin)
     assert_response :success
   end
 end

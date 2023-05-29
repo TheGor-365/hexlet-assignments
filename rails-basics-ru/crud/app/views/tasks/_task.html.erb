@@ -1,0 +1,27 @@
+<div class="border border border-secondary p-5 rounded">
+  <h1 class="text-center mb-5">
+    <%= task.name %>
+  </h1>
+
+  <div class="border border-secondary rounded p-5 my-3">
+    <p>
+      <%= task.description %>
+    </p>
+  </div>
+
+  <small>
+    <strong>Status:</strong> <%= task.status %>
+  </small><br>
+
+  <small>
+    <strong>Creator:</strong> <%= task.creator %>
+  </small><br>
+
+  <small>
+    <strong>Performer:</strong> <%= task.performer %>
+  </small><br>
+
+  <p class="<%= task.completed ? 'text-success' : 'text-danger' %> my-3">
+    <%= task.completed ? 'Completed' : 'Uncompleted' %>
+  </p>
+</div>

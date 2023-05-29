@@ -13,17 +13,19 @@
 
   <body>
     <%# https://api.rubyonrails.org/classes/ActionDispatch/Flash.html %>
-    <% if flash.any? %>
-      <% flash.each do |key, value| %>
-        <div class="<%= key %>"><%= value %></div>
+    <div class="container">
+      <% if flash.any? %>
+        <% flash.each do |key, value| %>
+          <div class="<%= key %>"><%= value %></div>
         <% end %>
-    <% end %>
-    <ul>
-      <li><%= link_to 'Home', root_path %></li>
-      <%# BEGIN %>
-      
-      <%# END %>
-    </ul>
-    <%= yield %>
+      <% end %>
+      <ul>
+        <li><%= link_to 'Home', root_path %></li>
+        <%# BEGIN %>
+        <li><%= link_to 'Tasks', tasks_path %></li>
+        <%# END %>
+      </ul>
+      <%= yield %>
+    </div>
   </body>
 </html>

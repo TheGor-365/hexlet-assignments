@@ -1,0 +1,19 @@
+<h1 class="text-center mb-5 display-1">
+  Tasks
+</h1>
+
+<% @tasks.each do |task| %>
+  <div class="border border-secondary rounded my-2 p-5">
+    <h3>
+      <%= task.name %>
+    </h3>
+
+    <h6 class="mb-5">
+      <%= link_to "Show", task, class: "text-success" %>
+    </h6>
+  </div>
+<% end %>
+
+<h6 class="my-5">
+  <%= link_to "Create task", new_task_path, class: "p-3 px-5 text-success text-center border border-success rounded my-5" %>
+</h6>

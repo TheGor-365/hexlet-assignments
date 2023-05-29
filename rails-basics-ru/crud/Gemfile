@@ -38,9 +38,9 @@ group :development do
 end
 
 group :test do
-  gem 'faker'
   gem 'minitest-power_assert'
 end
 
+gem 'faker'
 gem 'rexml', '~> 3.2', '>= 3.2.4'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

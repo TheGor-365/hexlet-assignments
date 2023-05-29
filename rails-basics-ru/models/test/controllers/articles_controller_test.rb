@@ -7,6 +7,8 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get show" do
+    @article = articles(:one)
+    
     get article_url(@article)
     assert_response :success
   end

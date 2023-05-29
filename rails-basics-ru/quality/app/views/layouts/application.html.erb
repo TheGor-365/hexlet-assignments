@@ -10,10 +10,13 @@
   </head>
 
   <body>
-  <ul>
-    <li><%= link_to "Home", root_path %></li>
-    <li><%= link_to 'Bulletins', bulletins_path %></li>
-  </ul>
-    <%= yield %>
+    <main class="container p-5">
+      <ul>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to 'Bulletins', bulletins_path %></li>
+      </ul>
+      
+      <%= yield %>
+    </main>
   </body>
 </html>

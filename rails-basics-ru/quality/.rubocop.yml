@@ -20,4 +20,10 @@ Gemspec/RequiredRubyVersion:
 
 Metrics/MethodLength:
   Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - 'bin/rails'
+    - 'bin/rake'
+    - 'bin/setup'
 # END

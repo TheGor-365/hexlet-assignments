@@ -1,8 +1,8 @@
 <h1>Bulletins</h1>
 <%# BEGIN %>
 <% @bulletins.each do |bulletin| %>
-  <h3>
-    <%= link_to bulletin.title, bulletin_path(bulletin) %>
-  </h3>
+  <p>
+    <%= bulletin %>
+  </p>
 <% end %>
 <%# END %>

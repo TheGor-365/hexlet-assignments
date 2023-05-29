@@ -9,9 +9,6 @@ AllCops:
     - 'examples/**'
 
 # BEGIN
-AllCops:
-  NewCops: enable
-
 Style/Documentation:
   Enabled: false
 
@@ -23,7 +20,7 @@ Metrics/MethodLength:
 
 Style/FrozenStringLiteralComment:
   Exclude:
-    - 'bin/rails'
-    - 'bin/rake'
-    - 'bin/setup'
+    - 'examples/app/controllers/notes_controller.rb'
+    - 'examples/config/routes.rb'
+    - 'examples/test/integration/notes_flow_test.rb'
 # END

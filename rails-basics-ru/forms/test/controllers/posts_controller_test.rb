@@ -1,61 +1,47 @@
-# frozen_string_literal: true
-
-require 'test_helper'
+require "test_helper"
 
 class PostsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @post = posts(:one)
-
-    @attrs = {
-      title: Faker::Movies::VForVendetta.character,
-      body: Faker::Movies::VForVendetta.speech,
-      published: Faker::Boolean.boolean,
-      summary: Faker::Movies::VForVendetta.quote
-    }
   end
 
-  test 'should get index' do
+  test "should get index" do
     get posts_url
     assert_response :success
   end
 
-  test 'should get new' do
+  test "should get new" do
     get new_post_url
     assert_response :success
   end
 
-  test 'should create post' do
-    post posts_url, params: { post: @attrs }
+  test "should create post" do
+    assert_difference("Post.count") do
+      post posts_url, params: { post: { body: @post.body, published: @post.published, summary: @post.summary, title: @post.title } }
+    end
 
-    post = Post.find_by(@attrs)
-
-    assert { post }
-    assert_redirected_to post_url(post)
+    assert_redirected_to post_url(Post.last)
   end
 
-  test 'should show post' do
+  test "should show post" do
     get post_url(@post)
     assert_response :success
   end
 
-  test 'should get edit' do
+  test "should get edit" do
     get edit_post_url(@post)
     assert_response :success
   end
 
-  test 'should update post' do
-    patch post_url(@post), params: { post: @attrs }
-
-    @post.reload
-
-    assert { @post.title == @attrs[:title] }
+  test "should update post" do
+    patch post_url(@post), params: { post: { body: @post.body, published: @post.published, summary: @post.summary, title: @post.title } }
     assert_redirected_to post_url(@post)
   end
 
-  test 'should destroy post' do
-    delete post_url(@post)
-
-    assert { !Post.exists? @post.id }
+  test "should destroy post" do
+    assert_difference("Post.count", -1) do
+      delete post_url(@post)
+    end
 
     assert_redirected_to posts_url
   end

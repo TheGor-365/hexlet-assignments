@@ -1,0 +1,15 @@
+div id="#{dom_id task}"
+  .display-3.mb-5.text-center
+    =< task.name
+  .border.border-secondary.p-5
+    =< task.description
+  .my-3
+    small class="text-muted"
+      strong Author:
+      span class="text-dark"
+        =< task.user.name
+    br
+    small class="text-muted"
+      strong Status:
+      span class="text-dark"
+        =< task.status.name

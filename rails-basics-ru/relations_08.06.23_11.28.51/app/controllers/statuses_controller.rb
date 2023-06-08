@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 
 class StatusesController < ApplicationController
+  before_action :set_status, only: %i[show edit update delete]
+
   def index
     @statuses = Status.all
   end
 
   def show
-    @status = Status.find params[:id]
   end
 
   def new
@@ -14,7 +15,6 @@ class StatusesController < ApplicationController
   end
 
   def edit
-    @status = Status.find params[:id]
   end
 
   def create
@@ -28,8 +28,6 @@ class StatusesController < ApplicationController
   end
 
   def update
-    @status = Status.find params[:id]
-
     if @status.update(status_params)
       redirect_to @status, notice: 'Status was successfully updated.'
     else
@@ -38,8 +36,6 @@ class StatusesController < ApplicationController
   end
 
   def destroy
-    @status = Status.find params[:id]
-
     @status.destroy
 
     redirect_to statuses_url, notice: 'Status was successfully destroyed.'
@@ -47,7 +43,10 @@ class StatusesController < ApplicationController
 
   private
 
-  # Only allow a list of trusted parameters through.
+  def set_status
+    @status = Status.find params[:id]
+  end
+
   def status_params
     params.require(:status).permit(:name)
   end

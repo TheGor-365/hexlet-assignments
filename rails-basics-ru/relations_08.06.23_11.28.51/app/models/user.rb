@@ -2,6 +2,6 @@
 
 class User < ApplicationRecord
   # BEGIN
-  
+  has_many :tasks, inverse_of: :user
   # END
 end

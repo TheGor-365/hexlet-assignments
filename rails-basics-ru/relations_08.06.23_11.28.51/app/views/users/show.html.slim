@@ -2,7 +2,8 @@
   = @user.name
 
 / BEGIN
-
+- @tasks.each do |task|
+  == render task
 / END
 hr
 

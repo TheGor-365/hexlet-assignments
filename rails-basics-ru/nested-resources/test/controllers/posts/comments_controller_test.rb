@@ -9,13 +9,13 @@ module Posts
     end
 
     test 'should get new' do
-      get new_post_comment_path(@post)
+      get new_post_comment_path(@comment)
       assert_response :success
     end
 
     test 'should create post_comment' do
       assert_difference("PostComment.count") do
-        post post_comments_path(@post), params: {
+        post post_comments_path(@comment), params: {
           post_comment: {
             body:    @comment.body,
             post_id: @comment.post_id
@@ -23,33 +23,31 @@ module Posts
         }
       end
 
-      assert_redirected_to post_url(@post)
+      assert_redirected_to post_url(@comment)
     end
 
     test 'should show post_comment' do
-      get post_path(@post)
+      get post_path(@comment)
       assert_response :success
     end
 
     test 'should get edit' do
-      @post = post(:one)
-
-      get edit_post_comment_path(@post, @comment)
+      get edit_post_comment_path(@comment)
       assert_response :success
     end
 
     test 'should update post_comment' do
-      patch post_comment_path(@post), params: {
+      patch post_comment_path(@comment), params: {
         post_comment: {
           body:    @comment.body,
           post_id: @comment.post_id
         }
       }
-      assert_redirected_to post_url(@post)
+      assert_redirected_to post_url(@comment)
     end
 
     test 'should destroy post_comment' do
-      delete post_comment_path(@post, @comment)
+      delete post_comment_path(@comment)
 
       assert { !PostComment.exists?(@comment.id) }
       assert_redirected_to posts_url

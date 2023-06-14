@@ -22,7 +22,11 @@ module Posts
     end
 
     test 'should get edit' do
-      get edit_post_comment_path(@comment)
+      get edit_post_comment_path(@comment), params: {
+        post_comment: {
+          body:    @comment.body,
+          post_id: @comment.post_id
+        }
       assert_response :success
     end
 
@@ -37,7 +41,11 @@ module Posts
     end
 
     test 'should destroy post_comment' do
-      delete post_comment_path(@comment)
+      delete post_comment_path(@comment), params: {
+        post_comment: {
+          body:    @comment.body,
+          post_id: @comment.post_id
+        }
 
       assert { !PostComment.exists?(@comment.id) }
       assert_redirected_to posts_url

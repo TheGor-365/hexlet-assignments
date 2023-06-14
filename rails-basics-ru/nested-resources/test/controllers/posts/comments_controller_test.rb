@@ -6,7 +6,6 @@ module Posts
   class CommentsControllerTest < ActionDispatch::IntegrationTest
     setup do
       @comment = post_comments(:one)
-      @post = post(:one)
     end
 
     test 'should create post_comment' do
@@ -19,7 +18,7 @@ module Posts
         }
       end
 
-      assert_redirected_to post_url(@comment)
+      assert_redirected_to post_url
     end
 
     test 'should get edit' do
@@ -31,14 +30,14 @@ module Posts
     test 'should update post_comment' do
       patch post_comment_path(@comment)
 
-      assert_redirected_to post_url(@comment)
+      assert_redirected_to post_url
     end
 
     test 'should destroy post_comment' do
       assert_difference("PostComment.count", -1) do
-        delete post_comment_path(@post, @comment)
+        delete post_comment_path(@comment)
       end
-      assert_redirected_to posts_url
+      assert_redirected_to post_url
     end
   end
 end

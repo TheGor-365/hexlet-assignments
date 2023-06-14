@@ -42,6 +42,7 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
         body:    @comment.body,
         post_id: @comment.post_id
       }
+    }
     assert_redirected_to post_url(@post)
   end
 

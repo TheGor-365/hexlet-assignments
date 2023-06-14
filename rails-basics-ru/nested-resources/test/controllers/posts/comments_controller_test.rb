@@ -22,32 +22,17 @@ module Posts
     end
 
     test 'should get edit' do
-      get edit_post_comment_path(@comment), params: {
-        post_comment: {
-          body: @comment.body,
-          post_id: @comment.post_id
-        }
-      }
+      get edit_post_comment_path(@comment)
       assert_response :success
     end
 
     test 'should update post_comment' do
-      patch post_comment_path(@comment), params: {
-        post_comment: {
-          body: @comment.body,
-          post_id: @comment.post_id
-        }
-      }
+      patch post_comment_path(@comment)
       assert_redirected_to post_url(@comment)
     end
 
     test 'should destroy post_comment' do
-      delete post_comment_path(@comment), params: {
-        post_comment: {
-          body: @comment.body,
-          post_id: @comment.post_id
-        }
-      }
+      delete post_comment_path(@comment)
       assert_difference("PostComment.count", -1) do
         delete post_comment_path(@comment)
       end

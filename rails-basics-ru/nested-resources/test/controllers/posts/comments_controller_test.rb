@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class Post::CommentsControllerTest < ActionDispatch::IntegrationTest
+class CommentsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @comment = post_comments(:one)
     @post = post(:one)

@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 module Posts
   class CommentsController < ApplicationController
-    before_action :set_post_comment, only: %i[ edit update destroy ]
-    before_action :set_post, only: %i[ new edit create update destroy ]
+    before_action :set_post_comment, only: %i[edit update destroy]
+    before_action :set_post, only: %i[new edit create update destroy]
 
     def new
       @post_comment = @post.post_comments.build
@@ -13,7 +15,7 @@ module Posts
       @post_comment = @post.post_comments.build(post_comment_params)
 
       if @post_comment.save
-        redirect_to post_url(@post), notice: "Comment was successfully created."
+        redirect_to post_url(@post), notice: 'Comment was successfully created.'
       else
         render :new, status: :unprocessable_entity
       end
@@ -21,7 +23,7 @@ module Posts
 
     def update
       if @post_comment.update(post_comment_params)
-        redirect_to post_url(@post), notice: "Comment was successfully updated."
+        redirect_to post_url(@post), notice: 'Comment was successfully updated.'
       else
         render :edit, status: :unprocessable_entity
       end

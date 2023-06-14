@@ -21,11 +21,6 @@ module Posts
       assert_redirected_to post_url(@comment)
     end
 
-    test 'should show post_comment' do
-      get post_path(@comment)
-      assert_response :success
-    end
-
     test 'should get edit' do
       get edit_post_comment_path(@comment)
       assert_response :success

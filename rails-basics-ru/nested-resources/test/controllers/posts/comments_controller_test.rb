@@ -27,6 +27,7 @@ module Posts
           body:    @comment.body,
           post_id: @comment.post_id
         }
+      }
       assert_response :success
     end
 
@@ -46,7 +47,7 @@ module Posts
           body:    @comment.body,
           post_id: @comment.post_id
         }
-
+      }
       assert { !PostComment.exists?(@comment.id) }
       assert_redirected_to posts_url
     end

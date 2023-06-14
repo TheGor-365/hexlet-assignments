@@ -42,10 +42,6 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
         body:    @comment.body,
         post_id: @comment.post_id
       }
-
-    @comment.body = 'Updated body'
-
-    assert { @comment.body == 'Updated body' }
     assert_redirected_to post_url(@post)
   end
 

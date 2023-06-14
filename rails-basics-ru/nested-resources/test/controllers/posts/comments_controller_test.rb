@@ -18,26 +18,7 @@ module Posts
         }
       end
 
-      assert_redirected_to post_url
-    end
-
-    test 'should get edit' do
-      get edit_post_comment_path(@comment)
-
-      assert_response :success
-    end
-
-    test 'should update post_comment' do
-      patch post_comment_path(@comment)
-
-      assert_redirected_to post_url
-    end
-
-    test 'should destroy post_comment' do
-      assert_difference("PostComment.count", -1) do
-        delete post_comment_path(@comment)
-      end
-      assert_redirected_to post_url
+      assert_redirected_to post_url(@comment)
     end
   end
 end

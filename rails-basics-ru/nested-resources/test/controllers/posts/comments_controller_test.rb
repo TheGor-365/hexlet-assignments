@@ -13,7 +13,7 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test 'should create comment' do
+  test 'should create post_comment' do
     assert_difference("PostComment.count") do
       post post_comments_url(@post), params: {
         post_comment: {
@@ -26,7 +26,7 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to post_url(@post)
   end
 
-  test 'should show comment' do
+  test 'should show post_comment' do
     get post_url(@post)
     assert_response :success
   end
@@ -36,7 +36,7 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test 'should update post' do
+  test 'should update post_comment' do
     patch post_comment_path(@post), params: {
       post_comment: {
         body:    @comment.body,
@@ -46,7 +46,7 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to post_url(@post)
   end
 
-  test 'should destroy comment' do
+  test 'should destroy post_comment' do
     delete post_comment(@post, @comment)
 
     assert { !PostComment.exists?(@comment.id) }

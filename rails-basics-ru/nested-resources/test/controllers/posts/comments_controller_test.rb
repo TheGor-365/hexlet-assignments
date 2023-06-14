@@ -6,7 +6,12 @@ module Posts
   class CommentsControllerTest < ActionDispatch::IntegrationTest
     setup do
       @comment = post_comments(:one)
-      @post = post(:one)
+      # @post = post(:one)
+    end
+
+    test 'should get new' do
+      get new_post_comment_path(@post)
+      assert_response :success
     end
 
     test 'should create post_comment' do
@@ -20,6 +25,11 @@ module Posts
       end
 
       assert_redirected_to post_url(@post)
+    end
+
+    test 'should show post_comment' do
+      get post_path(@post)
+      assert_response :success
     end
 
     test 'should get edit' do

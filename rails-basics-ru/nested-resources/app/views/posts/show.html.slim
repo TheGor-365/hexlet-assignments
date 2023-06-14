@@ -1,10 +1,26 @@
 - content_for :title do
   = @post.title
-p
-  strong.me-2 Body:
+.border.border-primary.p-5
   = @post.body
 / BEGIN
+.m-5.p-5.shadow.shadow-lg
+  h3 New comment
+  = simple_form_for(@comment, post: @post, url: post_comments_path(@post)) do |f|
+    = f.error_notification
+    = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
+    = f.input :body, label: "Create comment", wrapper_html: { class: 'text-muted' }
+    = f.button :submit, class: 'btn btn-success float-end btn-block'
+
+.my-5
+  h3 Comments
+  - @post.post_comments.each do |comment|
+    .border.border-secondary.p-5.my-3
+       = comment.body
+       br
+       .btn-group.mt-5
+        = link_to "Edit", edit_post_comment_path(@post, comment), class: 'btn btn-sm btn-warning'
+        = button_to "Destroy", post_comment_path(@post, comment), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger'
 / END
 hr
 

@@ -7,12 +7,10 @@
 one:
   title: One
   body: Post body one
-  id: 1
 
 two:
   title: Two
   body: Post body two
-  id: 2
 
 without_comments:
   title: Without comments

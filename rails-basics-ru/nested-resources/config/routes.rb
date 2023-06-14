@@ -9,9 +9,5 @@ Rails.application.routes.draw do
       resources :comments, except: [:index]
     end
   end
-
-  # resources :posts, shallow: true do
-  #   resources :comments, except: [:index, :show]
-  # end
   # END
 end

@@ -1,15 +1,13 @@
 module Posts
   class CommentsController < ApplicationController
-    before_action :set_post_comment, only: %i[ new edit update destroy ]
-    before_action :set_post, only: %i[ show edit create update destroy ]
+    before_action :set_post_comment, only: %i[ edit update destroy ]
+    before_action :set_post, only: %i[ new edit create update destroy ]
 
     def new
-      @post = Post.find(params[:post_id])
       @post_comment = @post.post_comments.build
     end
 
-    def edit
-    end
+    def edit; end
 
     def create
       @post_comment = @post.post_comments.build(post_comment_params)

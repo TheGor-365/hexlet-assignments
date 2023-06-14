@@ -2,6 +2,7 @@
   = @post.title
 .border.border-primary.p-5
   = @post.body
+  
 / BEGIN
 .m-5.p-5.shadow.shadow-lg
   h3 New comment
@@ -20,10 +21,10 @@
        br
        .btn-group.mt-5
         = link_to "Edit", edit_post_comment_path(@post, comment), class: 'btn btn-sm btn-warning'
-        = button_to "Destroy", post_comment_path(@post, comment), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger'
+        = button_to "Destroy", post_comment_path(@post, comment), method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger'
 / END
-hr
 
+hr
 .d-flex
   = link_to 'Edit', edit_post_path(@post), class: 'btn btn-outline-primary me-2'
   = link_to 'Back', :back, class: 'btn btn-outline-primary'

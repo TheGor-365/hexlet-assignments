@@ -6,11 +6,13 @@
 #
 one:
   title: One
-  body: One body
+  body: Post body one
+  id: 1
 
 two:
   title: Two
-  body: Two body
+  body: Post body two
+  id: 2
 
 without_comments:
   title: Without comments

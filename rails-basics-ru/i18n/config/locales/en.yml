@@ -5,11 +5,11 @@ en:
   destroy: Delete
   destroy_confirmation: Are you sure?
   back: Back
-  all:
-    layouts:
-      shared:
-        nav:
-          hexlet_logo: Hexlet
+  layouts:
+    shared:
+      nav:
+        hexlet_logo: Hexlet
+  comments: count
   footer:
     hexlet_title: © Hexlet, 2022
   home:

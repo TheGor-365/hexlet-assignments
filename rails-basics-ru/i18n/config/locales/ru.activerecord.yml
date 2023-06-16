@@ -4,6 +4,8 @@ ru:
       # BEGIN
       post:
         one: Пост
+        few: Посты
+        many: Посты
         other: Посты
       # END
       post/comment: Комментарий

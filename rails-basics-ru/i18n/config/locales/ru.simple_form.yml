@@ -11,7 +11,7 @@ ru:
     placeholders:
       # BEGIN
       post:
-        title: Введите название статьи
+        title: Название
         body: Введите текст статьи
       # END
       post_comment:

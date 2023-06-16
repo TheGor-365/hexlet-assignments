@@ -10,8 +10,8 @@ en:
     placeholders:
       # BEGIN
       post:
-        title: Add post title
-        body: Add post body
+        title: Enter post title
+        body: Enter post body
       # END
       post_comment:
         body: Enter comment body

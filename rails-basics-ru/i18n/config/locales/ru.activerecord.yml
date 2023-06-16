@@ -3,8 +3,8 @@ ru:
     models:
       # BEGIN
       post:
-        one: Статья
-        other: Статьи
+        one: Пост
+        other: Посты
       # END
       post/comment: Комментарий
 
@@ -23,7 +23,7 @@ ru:
           attributes:
             # BEGIN
             title:
-              blank: не может быть пустым
+              blank: Должно быть заполнено
             body:
               blank: не может быть пустым
             # END

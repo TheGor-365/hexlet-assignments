@@ -1,5 +1,5 @@
 en:
-  new: New post
+  new: New Post
   show: Show
   edit: Edit
   destroy: Delete
@@ -16,3 +16,5 @@ en:
     title: Posts
     table_title: Title
     body: Body
+  post:
+    title: Post

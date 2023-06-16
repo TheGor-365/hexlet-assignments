@@ -7,7 +7,12 @@ en:
         other: '%{count} comments'
         zero: No comments
     # END
-
+    create:
+      success: Post was created.
+    update:
+      success: Post was updated.
+    destroy:
+      success: Post was destroyed.
     comments:
       edit:
         title: Editing comment

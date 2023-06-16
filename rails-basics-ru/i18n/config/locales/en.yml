@@ -9,7 +9,7 @@ en:
     shared:
       nav:
         hexlet_logo: Hexlet
-  comments: count
+  # comments: count
   footer:
     hexlet_title: © Hexlet, 2022
   home:

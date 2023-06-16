@@ -1,5 +1,5 @@
 ru:
-  new: Создать Пост
+  new: Новый пост
   show: Показать
   edit: Редактировать
   destroy: Удалить
@@ -9,7 +9,7 @@ ru:
     shared:
       nav:
         hexlet_logo: Хекслет
-  comments: количество
+  # comments: количество
   footer:
     hexlet_title: © Хекслет, 2022
   home:

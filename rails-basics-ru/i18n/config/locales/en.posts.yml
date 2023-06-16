@@ -1,7 +1,11 @@
 en:
   posts:
     # BEGIN
-    
+    index:
+      comments_count:
+        one: '%{count} comment'
+        other: '%{count} comments'
+        zero: No comments
     # END
 
     comments:

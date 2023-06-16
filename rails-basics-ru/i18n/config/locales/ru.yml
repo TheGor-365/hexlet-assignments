@@ -1,7 +1,18 @@
 ru:
+  new: Создать статью
   show: Показать
   edit: Редактировать
   destroy: Удалить
   destroy_confirmation: Вы уверены?
   back: Вернуться
   hexlet_logo: Хекслет
+  footer:
+    hexlet_title: © Хекслет, 2022
+  home:
+    title: Домашняя страница
+  app:
+    name: Блог I18n
+  posts:
+    title: Статьи
+    table_title: Название
+    body: Cодержание

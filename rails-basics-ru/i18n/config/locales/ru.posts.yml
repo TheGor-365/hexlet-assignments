@@ -2,7 +2,12 @@
 ru:
   posts:
     # BEGIN
-    
+    index:
+      comments_count:
+        one: '%{count} комментарий'
+        few: '%{count} комментария'
+        other: '%{count} комментариев'
+        zero: нет комментариев
     # END
 
     comments:

@@ -1,7 +1,18 @@
 en:
+  new: New post
   show: Show
   edit: Edit
   destroy: Delete
   destroy_confirmation: Are you sure?
   back: Back
   hexlet_logo: Hexlet
+  footer:
+    hexlet_title: © Hexlet, 2022
+  home:
+    title: Home Page
+  app:
+    name: Blog I18n
+  posts:
+    title: Posts
+    table_title: Title
+    body: Body

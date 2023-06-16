@@ -1,7 +1,7 @@
 = content_for :title do
   = @post.title
 p
-  strong.me-2 = t('.body')
+  strong.me-2 = t('posts.body')
   = @post.body
 
 .mt-3
@@ -22,7 +22,7 @@ p
 
             = link_to t('edit'), edit_post_comment_path(@post, comment), class: 'me-2'
 
-            = link_to post_comment_path(@post, comment), method: :delete, data: { confirm: t('destroy_confirmation') } do
+            = link_to post_comment_path(@post, comment), method: :delete, data: { turbo_method: :delete, turbo_confirm: t('destroy_confirmation') }, class: 'text-danger' do
               = t('destroy')
   .my-2
 

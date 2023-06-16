@@ -6,7 +6,7 @@ ru:
       comments_count:
         one: '%{count} комментарий'
         few: '%{count} комментария'
-        other: '%{count} комментариев'
+        many: '%{count} комментариев'
         zero: нет комментариев
     # END
     create:

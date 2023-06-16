@@ -5,16 +5,24 @@ en:
   destroy: Delete
   destroy_confirmation: Are you sure?
   back: Back
-  hexlet_logo: Hexlet
+  all:
+    layouts:
+      shared:
+        nav:
+          hexlet_logo: Hexlet
   footer:
     hexlet_title: © Hexlet, 2022
   home:
-    title: Home Page
+    title: Home page
   app:
     name: Blog I18n
   posts:
     title: Posts
     table_title: Title
     body: Body
+    edit:
+      title: Edit post
+    show:
+      comments: Comments
   post:
-    title: Post
+    title: New Post

@@ -5,7 +5,11 @@ ru:
   destroy: Удалить
   destroy_confirmation: Вы уверены?
   back: Вернуться
-  hexlet_logo: Хекслет
+  all:
+    layouts:
+      shared:
+        nav:
+          hexlet_logo: Хекслет
   footer:
     hexlet_title: © Хекслет, 2022
   home:
@@ -16,5 +20,9 @@ ru:
     title: Посты
     table_title: Название
     body: Cодержание
+    edit:
+      title: Редактировать пост
+    show:
+      comments: Комментарии
   post:
-    title: Пост
+    title: Новый пост

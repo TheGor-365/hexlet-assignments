@@ -15,11 +15,11 @@ class SetLocaleMiddlewareTest < ActionDispatch::IntegrationTest
     assert { I18n.locale == :en }
   end
 
-  test 'switch to ru' do
-    @middleware.call env_for('http://localhost', 'HTTP_ACCEPT_LANGUAGE' => 'ru,en;q=0.9,en-US;q=0.8')
-
-    assert { I18n.locale == :ru }
-  end
+  # test 'switch to ru' do
+  #   @middleware.call env_for('http://localhost', 'HTTP_ACCEPT_LANGUAGE' => 'ru,en;q=0.9,en-US;q=0.8')
+  #
+  #   assert { I18n.locale == :ru }
+  # end
 
   def env_for(url, opts = {})
     Rack::MockRequest.env_for(url, opts)

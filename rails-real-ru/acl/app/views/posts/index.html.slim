@@ -21,10 +21,15 @@ table.table.table-striped.table-hover.mb-5
           / posts links
           = link_to t('show'), post, class: 'me-4'
           / BEGIN
-          
+          - if current_user && current_user.admin
+            = link_to t('edit'), edit_post_path(post), class: 'text-warning me-3'
+            = button_to t('destroy'), post, method: :delete, class: 'btn btn-link text-danger py-0'
+          - elsif current_user && current_user.id == post.author.id
+            = link_to t('edit'), edit_post_path(post), class: 'text-warning me-3'
           / END
 
 / new post link
 / BEGIN
-
+- if current_user
+  = link_to t('new'), new_post_path, class: 'btn btn-outline-success'
 / END

@@ -1,8 +1,0 @@
-.m-5.p-5.shadow.shadow-lg
-  h3 New comment
-  = simple_form_for(@post_comment, url: url) do |f|
-    = f.error_notification
-    = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
-
-    = f.input :body, label: "Add comment for #{@post_comment.post.title}", wrapper_html: { class: 'text-muted' }
-    = f.button :submit, class: 'btn btn-success float-end btn-block'

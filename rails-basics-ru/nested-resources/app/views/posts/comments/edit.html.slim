@@ -1,9 +1,0 @@
-= content_for :title do
-  = 'Editing comment'
-
-== render 'posts/comments/form', post_comment: @post_comment, post: @post, url: post_comment_path(@post)
-
-hr
-.d-flex
-  = link_to 'Show', @comment, class: 'btn btn-outline-primary me-2'
-  = link_to 'Back', :back, class: 'btn btn-outline-primary'

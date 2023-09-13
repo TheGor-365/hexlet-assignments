@@ -17,6 +17,6 @@ class ApplicationController < ActionController::Base
   private
 
   def user_not_authorized
-    redirect_to root_path, notice: 'Permission denied'
+    redirect_to posts_path, notice: 'Permission denied'
   end
 end

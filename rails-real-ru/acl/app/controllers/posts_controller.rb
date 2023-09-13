@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   def edit; end
 
   def create
-    @post = current_user.posts.build(post_params)
+    @post = Post.new(post_params)
     authorize @post
 
     if @post.save

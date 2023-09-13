@@ -13,17 +13,22 @@ class PostsController < ApplicationController
   def show; end
 
   def new
-    # @post = current_user&.posts.build
-    @post = Post.new
-    # @post = current_user&.posts.build
+    if current_user
+      @post = current_user&.posts.build
+    else
+      @post = Post.new
+    end
     authorize @post
   end
 
   def edit; end
 
   def create
-    @post = Post.new(post_params)
-    @post = current_user&.posts.build(post_params)
+    if current_user
+      @post = current_user&.posts.build(post_params)
+    else
+      @post = Post.new(post_params)
+    end
     authorize @post
 
     if @post.save

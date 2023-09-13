@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   def new
     # @post = current_user&.posts.build
     @post = Post.new
-    @post = current_user&.posts.build
+    # @post = current_user&.posts.build
     authorize @post
   end
 

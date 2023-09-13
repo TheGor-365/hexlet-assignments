@@ -5,9 +5,6 @@ class ApplicationController < ActionController::Base
   include Pundit::Authorization
 
   helper_method :current_user
-  helper_method :post_author?
-
-  # after_action :verify_authorized, except: [:index]
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
@@ -15,10 +12,6 @@ class ApplicationController < ActionController::Base
     return unless session[:user_id]
 
     @user = User.find(session[:user_id])
-  end
-
-  def post_author?
-    @user.id == @user.posts.first.author.id
   end
 
   private

@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
-  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+  # rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   def current_user
     return unless session[:user_id]

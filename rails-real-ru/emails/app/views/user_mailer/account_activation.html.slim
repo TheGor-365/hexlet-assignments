@@ -1,0 +1,9 @@
+h1.text-success.my-5
+  = t('user_mailer.account_activation.confirm')
+
+h3.text-muted.mb-5
+  = t('user_mailer.account_activation.congratulation', user_name: @user_name)
+
+.card.shadow.rounded.p-5.m-5
+  p
+    = t('user_mailer.account_activation.welcome_text')

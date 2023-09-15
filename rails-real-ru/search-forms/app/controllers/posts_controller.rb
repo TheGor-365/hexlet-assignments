@@ -3,7 +3,8 @@
 class PostsController < ApplicationController
   def index
     # BEGIN
-    
+    @search_query = Post.ransack(params[:search_query].try(:merge, m: 'or'))
+    @posts = @search_query.result
     # END
   end
 

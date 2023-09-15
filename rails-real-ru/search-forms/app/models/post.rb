@@ -18,4 +18,8 @@ class Post < ApplicationRecord
   def self.ransackable_attributes(_auth_object = nil)
     %w[aasm_state title]
   end
+
+  def self.ransackable_associations(auth_object = nil)
+    []
+  end
 end

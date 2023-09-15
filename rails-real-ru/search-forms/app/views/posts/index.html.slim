@@ -5,7 +5,10 @@
 
 .p-3.bg-light
   / BEGIN
-  
+  = search_form_for @search_query, url: posts_path do |f|
+    = f.label :draft_or_published_or_title_cont, class: 'form-label'
+    = f.search_field :aasm_state_or_title_cont, class: 'form-control'
+    = f.submit class: 'btn btn-sm btn-success my-3'
   / END
 
 table.table.table-striped.table-hover.mb-5

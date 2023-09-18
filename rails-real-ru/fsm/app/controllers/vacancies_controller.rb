@@ -33,7 +33,7 @@ class VacanciesController < ApplicationController
   end
 
   def archive
-    if @vacancy.published? || @vacancy.on_moderate?
+    if @vacancy.on_moderate? || @vacancy.published?
       @vacancy.archive!
       redirect_to vacancies_path, notice: 'Vacancy was archived successfully'
     else

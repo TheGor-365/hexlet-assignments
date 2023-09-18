@@ -36,7 +36,7 @@ class VacanciesController < ApplicationController
       @vacancy.archive!
       redirect_to vacancies_path, notice: 'Vacancy was archived successfully'
     else
-      render :index, notice: 'There are some error'
+      redirect_to vacancies_path, notice: 'There are some error'
     end
   end
   # END

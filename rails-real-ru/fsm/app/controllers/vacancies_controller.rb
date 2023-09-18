@@ -2,10 +2,9 @@
 
 class VacanciesController < ApplicationController
   before_action :set_vacancy, only: %I[publish archive]
+  before_action :set_vacancies, only: %I[publish archive index]
 
   def index
-    @on_moderate = Vacancy.on_moderate
-    @published = Vacancy.published
   end
 
   def new
@@ -46,6 +45,11 @@ class VacanciesController < ApplicationController
 
   def set_vacancy
     @vacancy = Vacancy.find(params[:id])
+  end
+
+  def set_vacancies
+    @on_moderate = Vacancy.on_moderate
+    @published = Vacancy.published
   end
 
   def vacancy_params

@@ -24,7 +24,7 @@ class VacanciesController < ApplicationController
 
   # BEGIN
   def publish
-    if @vacancy.on_moderate? || @vacancy.archived?
+    if @vacancy.on_moderate?
       @vacancy.publish!
       redirect_to vacancies_path, notice: 'Vacancy was published successfully'
     else

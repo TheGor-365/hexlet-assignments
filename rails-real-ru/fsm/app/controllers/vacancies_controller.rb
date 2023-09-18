@@ -26,16 +26,16 @@ class VacanciesController < ApplicationController
   def publish
     if @vacancy.on_moderate?
       @vacancy.publish!
-      redirect_to root_path, notice: 'Vacancy was published successfully'
+      redirect_to vacancies_path, notice: 'Vacancy was published successfully'
     else
       render :index, notice: 'There are some error'
     end
   end
 
   def archive
-    if @vacancy.published?
+    if @vacancy.published? || @vacancy.on_moderate?
       @vacancy.archive!
-      redirect_to root_path, notice: 'Vacancy was archived successfully'
+      redirect_to vacancies_path, notice: 'Vacancy was archived successfully'
     else
       render :index, notice: 'There are some error'
     end

@@ -1,7 +1,7 @@
-100.times do |number|
+30.times do |number|
   vacancy = Vacancy.create(
     title:       Faker::Job.position,
-    description: Faker::Job.title
+    description: Faker::Lorem.sentence
   )
-  puts "Create vacancy\t - #{vacancy}\t\t number - #{number.next}"
+  puts "Create vacancy\t - #{vacancy.title}\t\t number - #{number.next}"
 end

@@ -7,16 +7,25 @@ class Repository < ApplicationRecord
 
   # BEGIN
   aasm do
-    state :created, initialize: true
+    state :created, initial: true
     state :fetching
     state :fetched
     state :failed
 
-    event :update_repos do
-      transitions from: :created,  to: :fetching
+    event :fetch do
+      transitions from: %i[created fetched failed], to: :fetching
+    end
+
+    event :rollback do
+      transitions from: :fetching, to: :created
+    end
+
+    event :mark_as_fetched do
       transitions from: :fetching, to: :fetched
-      transitions from: :fetched,  to: :failed
-      transitions from: :failed,   to: :created
+    end
+
+    event :mark_as_failed do
+      transitions to: :failed
     end
   end
   # END

@@ -1,0 +1,12 @@
+en:
+  layouts:
+    application:
+      hexlet: "© Hexlet ltd, %{year}"
+    shared:
+      nav:
+        home: Home
+        switch_lang: "Switch language to %{loc}"
+
+  home:
+    index:
+      title: Home#index

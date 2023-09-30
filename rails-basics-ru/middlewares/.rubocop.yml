@@ -1,0 +1,37 @@
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'bin/**'
+    - 'db/schema.rb'
+    - 'db/migrate/**'
+    - 'examples/**'
+
+Style/Documentation:
+  Enabled: false
+
+Gemspec/RequiredRubyVersion:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - 'examples/app/controllers/notes_controller.rb'
+    - 'examples/config/routes.rb'
+    - 'examples/test/integration/notes_flow_test.rb'
+    - 'examples/app/controllers/application_controller.rb'
+    - 'examples/app/controllers/welcome_controller.rb'
+    - 'examples/config/application.rb'
+    - 'examples/config/environments/development.rb'
+    - 'examples/lib/freeze_server.rb'
+    - 'examples/lib/request_time_logger.rb'
+    - 'examples/lib/thread_safe_request_time_logger.rb'
+
+Lint/Debugger:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'examples/config/environments/development.rb'
+  Max: 30

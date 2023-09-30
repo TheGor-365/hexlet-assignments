@@ -1,0 +1,25 @@
+div class="border border border-secondary p-5 rounded"
+  h1 class="text-center mb-5"
+    =< task.name
+
+  div class="border border-secondary rounded p-5 my-3"
+    p
+      =< task.description
+
+  small
+    strong Status:
+    =< task.status
+  br
+
+  small
+    strong Creator:
+    =< task.creator
+  br
+
+  small
+    strong Performer:
+    =< task.performer
+  br
+
+  p class="#{ task.completed ? 'text-success' : 'text-danger'} my-3"
+    = task.completed ? 'Completed' : 'Uncompleted'

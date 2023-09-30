@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title Templates
+    meta name="keywords" content="template language"
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag 'application', 'data-turbo-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbo-track': 'reload', defer: true
+
+  body
+    div class='container'
+      nav class='navbar navbar-expand'
+        div class='collapse navbar-collapse'
+          ul class='navbar-nav'
+            li class='nav-item' = link_to 'Home', root_path, class: 'nav-link'
+            li class='nav-item' = link_to 'Tasks', tasks_path, class: 'nav-link'
+            li class='nav-item' = link_to 'Create task', new_task_path, class: 'nav-link'
+      main class='p-5'
+        = yield

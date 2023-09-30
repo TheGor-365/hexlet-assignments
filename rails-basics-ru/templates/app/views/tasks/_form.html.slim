@@ -1,0 +1,59 @@
+div class="border border border-secondary p-5 rounded col-7"
+  = form_with(model: @task) do |form|
+  
+    div
+      = form.label :name, class: "form-label"
+      = form.text_field :name, class: "form-control"
+
+      - @task.errors.full_messages_for(:name).each do |message|
+        small class="text-danger"
+          = message
+          br
+
+    div
+      = form.label :description, class: "form-label"
+      = form.text_area :description, class: "form-control"
+
+      - @task.errors.full_messages_for(:description).each do |message|
+        small class="text-danger"
+          = message
+          br
+
+    div
+      = form.label :status, class: "form-label"
+      = form.text_field :status, class: "form-control"
+
+      - @task.errors.full_messages_for(:status).each do |message|
+        small class="text-danger"
+          = message
+          br
+
+    div
+      = form.label :creator, class: "form-label"
+      = form.text_field :creator, class: "form-control"
+
+      - @task.errors.full_messages_for(:creator).each do |message|
+        small class="text-danger"
+          = message
+          br
+
+    div
+      = form.label :performer, class: "form-label"
+      = form.text_field :performer, class: "form-control"
+
+      - @task.errors.full_messages_for(:performer).each do |message|
+        small class="text-danger"
+          = message
+          br
+
+    div class="form-check form-switch my-3"
+      = form.label :completed, class: "form-check-label"
+      = form.check_box :completed, class: "form-check-input"
+
+      - @task.errors.full_messages_for(:completed).each do |message|
+        small class="text-danger"
+          = message
+          br
+
+    div class="my-3"
+      = form.submit class: "btn btn-sm btn-success"

@@ -1,0 +1,13 @@
+div
+  h3 class="text-center"
+    =< post.title
+
+  div class="border rounded p-5"
+    p class="mb-5"
+      =< post.body
+
+    small class="text-muted"
+      =< post.summary
+
+  p class="#{ post.published ? 'text-success' : 'text-danger' } my-3"
+    =< post.published ? 'Published' : 'Unpublished'

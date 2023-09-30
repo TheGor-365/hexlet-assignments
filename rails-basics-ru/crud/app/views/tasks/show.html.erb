@@ -1,0 +1,10 @@
+<%= render @task %>
+
+<h3 class="mt-5">
+  <%= link_to "Edit", edit_task_path(@task), class: "py-3 px-5 text-success text-center border border-success rounded" %>
+</h3>
+<br>
+
+<h3>
+  <%= button_to "Destroy this task", @task, method: :delete, class: "btn btn-link text-decoration-none py-3 px-5 text-danger text-center border border-danger rounded" %>
+</h3>
